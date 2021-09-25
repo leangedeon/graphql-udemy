@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "a40c4160-66ba-408c-ae56-ff9c2f13bef3",
+		"name": "Udemy GraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Professor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    addProfessor(\n        name: \"Alberto 2\",\n        age: 32,\n        active: true,\n        date: \"2012\"){\n            name\n            age\n            active\n            date\n        }\n    }\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    addCourse(\n        name: \"Course Java\",\n        language: \"Java\",\n        date: \"2012\"){\n            id\n            name\n            language\n            date\n        }\n    }\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Course",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n  course(id:\"3\"){\n\tid\n    name\n    language\n    date\n    professor {\n      id\n      name\n      active\n    }\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Courses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n  courses{\n\tid\n    name\n    language\n    date\n    professor {\n      id\n      name\n      active\n    }\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    updateCourse(id: \"6148b6aedbb752a7cea4abe8\", \n        name: \"Nuevo Curso 23\",\n        language: \"Nuevo\",\n        date: \"2023\",\n        professorId: \"6148b53e2624b9725bb46e4e\"){\n            name\n            date\n        }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    deleteCourse(id: \"6148ab3fa9ed892243ea2ce9\"){\n        name\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Courses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    deleteAllCourses{\n        name\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Professor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n  professor(name:\"Alberto\"){\n\t\tid\n    name    \n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Professors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n  professor{\n\tid\n    name    \n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Professor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    deleteProfessor(id: \"6148c27429417dc30b3f4c2a\"){\n        name\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Professors",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    deleteAllProfessors{\n        name\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    addUser(\n        name: \"Lean2\",\n        email: \"lean2@asd.com\",\n        password: \"1234\",\n        date: \"2012\"){\n            message\n            error\n            token\n        }\n    }\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRkYzNiYjNhNWVlZTE0MWMxYzk1ZjAiLCJuYW1lIjoiTGF1cmEiLCJkYXRlIjoiMjAxMiIsImlhdCI6MTYzMjU5OTE4Mn0.T9RD4-Cwn9aiRgfewntn5TyKWbcAe2AbXO6ArXHgqtQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    login(\n        email: \"lean@asd.com\",\n        password: \"1234\"\n        ){\n            message\n            error\n            token\n        }\n    }\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3131/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
